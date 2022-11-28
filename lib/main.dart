@@ -1,5 +1,7 @@
+import 'package:cryptomonnaie/core/constants/app_constant.dart';
 import 'package:cryptomonnaie/features/crypto/presentation/pages/crypto_page.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'di/injection_container.dart' as di;
@@ -17,7 +19,9 @@ class CryptoApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ProviderScope(
       child: MaterialApp(
-        title: 'CryptoApp',
+        title: AppConstants.cryptoApp ,
+        localizationsDelegates: AppLocalizations.localizationsDelegates,
+        supportedLocales: AppLocalizations.supportedLocales,
         theme: ThemeData(primarySwatch: Colors.blue),
         home: const CryptoPage(),
       ),

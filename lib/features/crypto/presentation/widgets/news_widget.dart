@@ -1,7 +1,8 @@
 import 'package:cryptomonnaie/core/constants/app_constant.dart';
 import 'package:cryptomonnaie/features/crypto/domain/entities/article_entity.dart';
-import 'package:cryptomonnaie/features/crypto/presentation/Riverpod/providers.dart';
+import 'package:cryptomonnaie/features/crypto/presentation/controller/providers.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:timeago/timeago.dart' as timeago;
 import 'package:url_launcher/url_launcher_string.dart';
@@ -17,7 +18,7 @@ class NewsWidget extends StatelessWidget {
         final AsyncValue news = ref.watch(cryptoNewscontrollerProvider(cryptoID));
         return news.when(
           data: (data) => _News(news: data),
-          error: (error, stackTrace) => const Text(AppConstants.noArticle),
+          error: (error, stackTrace) => Text(AppLocalizations.of(context).noArticle),
           loading: () => const CircularProgressIndicator(),
         );
       },

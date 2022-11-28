@@ -1,7 +1,8 @@
 import 'package:cryptomonnaie/core/constants/app_constant.dart';
 import 'package:cryptomonnaie/features/crypto/domain/entities/chart_price_entity.dart';
-import 'package:cryptomonnaie/features/crypto/presentation/Riverpod/providers.dart';
+import 'package:cryptomonnaie/features/crypto/presentation/controller/providers.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:intl/intl.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
@@ -17,7 +18,7 @@ class ChartWidget extends StatelessWidget {
       final AsyncValue chartData = ref.watch(cryptoPricecontrollerProvider(cryptoID));
       return chartData.when(
           data: (data) => _Chart(cryptoChange: cryptoChange, prices: data),
-          error: ((error, stackTrace) => const Text(AppConstants.error)),
+          error: ((error, stackTrace) => Text(AppLocalizations.of(context).noLunch)),
           loading: () => const CircularProgressIndicator());
     });
   }

@@ -2,7 +2,7 @@ import 'package:cryptomonnaie/core/domain/entities/result.dart';
 import 'package:cryptomonnaie/core/error/failure.dart';
 import 'package:cryptomonnaie/features/crypto/domain/entities/crypto_entity.dart';
 import 'package:cryptomonnaie/features/crypto/domain/usescases/crypto_list_usescases.dart';
-import 'package:cryptomonnaie/features/crypto/presentation/Riverpod/providers.dart';
+import 'package:cryptomonnaie/features/crypto/presentation/controller/providers.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';

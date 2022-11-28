@@ -1,8 +1,8 @@
-import 'package:cryptomonnaie/core/constants/app_constant.dart';
 import 'package:cryptomonnaie/features/crypto/domain/entities/crypto_entity.dart';
-import 'package:cryptomonnaie/features/crypto/presentation/Riverpod/providers.dart';
+import 'package:cryptomonnaie/features/crypto/presentation/controller/providers.dart';
 import 'package:cryptomonnaie/features/crypto/presentation/widgets/crypto_item_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class CryptoWidget extends StatelessWidget {
@@ -26,7 +26,7 @@ class CryptoWidget extends StatelessWidget {
                         priceChange24: cryptos[index].priceChange24),
                   ),
                 ),
-            error: ((error, stackTrace) => const Text(AppConstants.error)),
+            error: ((error, stackTrace) => Text(AppLocalizations.of(context).noLunch)),
             loading: () => const CircularProgressIndicator());
       },
     );

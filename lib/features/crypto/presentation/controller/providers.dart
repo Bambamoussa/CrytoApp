@@ -5,9 +5,9 @@ import 'package:cryptomonnaie/features/crypto/domain/repositories/crypto_reposit
 import 'package:cryptomonnaie/features/crypto/domain/usescases/chart_prices_usescases.dart';
 import 'package:cryptomonnaie/features/crypto/domain/usescases/crypto_list_usescases.dart';
 import 'package:cryptomonnaie/features/crypto/domain/usescases/news_usescases.dart';
-import 'package:cryptomonnaie/features/crypto/presentation/Riverpod/crypto_list_controller.dart';
-import 'package:cryptomonnaie/features/crypto/presentation/Riverpod/crypto_news_controller.dart';
-import 'package:cryptomonnaie/features/crypto/presentation/Riverpod/crypto_price_controller.dart';
+import 'package:cryptomonnaie/features/crypto/presentation/controller/crypto_list_controller.dart';
+import 'package:cryptomonnaie/features/crypto/presentation/controller/crypto_news_controller.dart';
+import 'package:cryptomonnaie/features/crypto/presentation/controller/crypto_price_controller.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../../di/injection_container.dart' as di;
