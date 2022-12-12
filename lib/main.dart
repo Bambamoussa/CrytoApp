@@ -16,7 +16,6 @@ void main()async {
    WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
    MessagingService.getToken();
-   MessagingService.getCurrentTopic();
   di.init();
   runApp(const CryptoApp());
 }
@@ -29,6 +28,7 @@ class CryptoApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ProviderScope(
       child: MaterialApp(
+        debugShowCheckedModeBanner: false,
         title: AppConstants.cryptoApp ,
         localizationsDelegates: AppLocalizations.localizationsDelegates,
         supportedLocales: AppLocalizations.supportedLocales,

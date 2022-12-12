@@ -1,3 +1,4 @@
+import 'package:cryptomonnaie/features/crypto/data/models/cryptonotification_model.dart';
 import 'package:cryptomonnaie/features/crypto/domain/entities/article_entity.dart';
 import 'package:cryptomonnaie/features/crypto/domain/entities/chart_price_entity.dart';
 import 'package:cryptomonnaie/features/crypto/domain/entities/crypto_entity.dart';
@@ -33,3 +34,5 @@ final cryptoPricecontrollerProvider = StateNotifierProvider.family
 final cryptoNewscontrollerProvider = StateNotifierProvider.family
     .autoDispose<CryptoNewsController, AsyncValue<List<ArticleEntity>>, String>(
         (ref, String coinsId) => CryptoNewsController(newsUsesCases: ref.watch(newsUseCaseProvider), coinsId: coinsId));
+
+ 

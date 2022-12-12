@@ -1,5 +1,6 @@
 import 'package:cryptomonnaie/core/constants/app_constant.dart';
 import 'package:cryptomonnaie/features/crypto/presentation/widgets/crypto_widget.dart';
+import 'package:cryptomonnaie/features/crypto/presentation/pages/notification_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
@@ -27,6 +28,13 @@ class _CryptoPageState extends State<CryptoPage> {
     super.initState();
     getCurrentDate();
   }
+  void showDetail(context) {
+    showCupertinoModalPopup(
+        context: context,
+        builder: (BuildContext builder) {
+          return const NotificationPage();
+        });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -43,6 +51,15 @@ class _CryptoPageState extends State<CryptoPage> {
             fontSize: 20,
             fontWeight: FontWeight.w800,
             color: Colors.grey,
+          ),
+          
+        ),
+         trailing: Material(
+          color: Colors.black,
+          child: IconButton(
+            color: Color.fromRGBO(255, 255, 255, 1),
+            icon: const Icon(Icons.settings),
+            onPressed: () => showDetail(context),
           ),
         ),
       ),

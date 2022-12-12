@@ -19,7 +19,7 @@ class NewsWidget extends StatelessWidget {
         return news.when(
           data: (data) => _News(news: data),
           error: (error, stackTrace) => Text(AppLocalizations.of(context).noArticle),
-          loading: () => const CircularProgressIndicator(),
+          loading: () => const Center(child:  CircularProgressIndicator()),
         );
       },
     );
