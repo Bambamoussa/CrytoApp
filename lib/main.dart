@@ -8,11 +8,18 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:firebase_core/firebase_core.dart';
 
 import 'di/injection_container.dart' as di;
+import 'dart:io';
 
-
-
-
+class MyHttpOverrides extends HttpOverrides {
+  @override
+  HttpClient createHttpClient(SecurityContext? context) {
+    return super.createHttpClient(context)
+      ..badCertificateCallback =
+          (X509Certificate cert, String host, int port) => true;
+  }
+}
 void main()async {
+   HttpOverrides.global = MyHttpOverrides();
    WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
    MessagingService.getToken();

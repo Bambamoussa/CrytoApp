@@ -3,7 +3,7 @@ const axios = require("axios");
 const admin = require("firebase-admin");
 admin.initializeApp();
 
-exports.getCryptoprice = functions.pubsub.schedule("every 24 hours")
+exports.getCrypApptoprice = functions.pubsub.schedule("every 24 hours")
     .onRun((context) => {
       axios.get("https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd")
           .then((res) => {
