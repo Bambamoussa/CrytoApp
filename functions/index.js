@@ -13,7 +13,7 @@ exports.getCryptoprice = functions.pubsub.schedule("every 24 hours")
                 notification: {
                   title: crypto.symbol.toUpperCase() + " - " + crypto.name,
                   body: crypto.currentPrice.toString() + "$US / "+
-                    crypto.price_change_percentage_24h.toString(),
+                  crypto.price_change_percentage_24h.toString(),
                   sound: "default",
                 },
               };
